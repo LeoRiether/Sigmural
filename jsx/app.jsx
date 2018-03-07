@@ -1,7 +1,7 @@
 function setImages(data) {
   data = data.target.response.data; // wow
   for (let i = 0; i < data.length; i++) {
-    this.refs['C' + i%4].addImg(data[i]);
+    this.refs['C' + i%3].addImg(data[i]);
   }
   this.forceUpdate();
 }
@@ -38,7 +38,7 @@ class Column extends React.Component {
       <div className="column" data-n={this.props.n}>
         {
           (this.state.imgs.map(e => {
-            return <Image src={e.link} label="ye" />
+            return <Image src={e.link} label={e.description} />
           }))
         }
       </div>
@@ -56,7 +56,6 @@ class App extends React.Component {
         <Column ref="C0" />
         <Column ref="C1" />
         <Column ref="C2" />
-        <Column ref="C3" />
       </div>
     ); 
   }

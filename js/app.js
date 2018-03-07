@@ -11,7 +11,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function setImages(data) {
   data = data.target.response.data; // wow
   for (var i = 0; i < data.length; i++) {
-    this.refs['C' + i % 4].addImg(data[i]);
+    this.refs['C' + i % 3].addImg(data[i]);
   }
   this.forceUpdate();
 }
@@ -74,7 +74,7 @@ var Column = function (_React$Component2) {
         'div',
         { className: 'column', 'data-n': this.props.n },
         this.state.imgs.map(function (e) {
-          return React.createElement(Image, { src: e.link, label: 'ye' });
+          return React.createElement(Image, { src: e.link, label: e.description });
         })
       );
     }
@@ -105,8 +105,7 @@ var App = function (_React$Component3) {
         { className: 'app grid' },
         React.createElement(Column, { ref: 'C0' }),
         React.createElement(Column, { ref: 'C1' }),
-        React.createElement(Column, { ref: 'C2' }),
-        React.createElement(Column, { ref: 'C3' })
+        React.createElement(Column, { ref: 'C2' })
       );
     }
   }, {
