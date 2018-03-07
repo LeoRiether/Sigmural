@@ -15,6 +15,10 @@ function getImages() {
   req.send(null);
 }
 
+function closeModal() {
+  document.querySelector('.modal').classList.remove('is-active');
+}
+
 function openModal(src) {
   document.querySelector('.modal').classList.add('is-active');
   document.querySelector('.modal-img').src = src;
