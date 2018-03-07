@@ -22,4 +22,16 @@
 .box {
   overflow: hidden;
   padding: 0;
+  font-size: 0;
+}
+
+@media screen and (min-width: 786px) {
+  /* .column {
+    flex: 25%;
+    max-width: 25%;
+  } */
+
+  .grid {
+    padding: 0 12.5%;
+  }
 }

@@ -18,7 +18,7 @@ function setImages(data) {
 
 function getImages() {
   var req = new XMLHttpRequest();
-  req.open('GET', 'https://api.imgur.com/3/album/eSgYR/images');
+  req.open('GET', 'https://api.imgur.com/3/album/l8XCc/images');
   req.setRequestHeader('Authorization', 'Client-ID 3db795949e3e86c');
   req.responseType = 'json';
   req.onload = setImages.bind(this);
@@ -37,16 +37,24 @@ var Image = function (_React$Component) {
   _createClass(Image, [{
     key: 'render',
     value: function render() {
-      return React.createElement(
-        'div',
-        { 'class': 'box' },
-        React.createElement('img', { src: this.props.src }),
-        React.createElement(
-          'span',
-          { className: 'label' },
-          this.props.label
-        )
-      );
+      if (this.props.label) {
+        return React.createElement(
+          'div',
+          { 'class': 'box' },
+          React.createElement('img', { src: this.props.src }),
+          React.createElement(
+            'span',
+            { className: 'label' },
+            this.props.label
+          )
+        );
+      } else {
+        return React.createElement(
+          'div',
+          { 'class': 'box' },
+          React.createElement('img', { src: this.props.src })
+        );
+      }
     }
   }]);
 

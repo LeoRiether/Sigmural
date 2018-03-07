@@ -8,7 +8,7 @@ function setImages(data) {
 
 function getImages() {
   let req = new XMLHttpRequest();
-  req.open('GET', 'https://api.imgur.com/3/album/eSgYR/images');
+  req.open('GET', 'https://api.imgur.com/3/album/l8XCc/images');
   req.setRequestHeader('Authorization', 'Client-ID 3db795949e3e86c');
   req.responseType = 'json';
   req.onload = setImages.bind(this);
@@ -17,12 +17,20 @@ function getImages() {
 
 class Image extends React.Component {
   render() {
-    return (
-      <div class="box">
-        <img src={this.props.src}/>
-        <span className="label">{this.props.label}</span>
-      </div>
-    );
+    if (this.props.label) {
+      return (
+        <div class="box">
+          <img src={this.props.src}/>
+          <span className="label">{this.props.label}</span>
+        </div>
+      );
+    } else {
+      return (
+        <div class="box">
+          <img src={this.props.src}/>
+        </div>
+      )
+    }
   }
 }
 
