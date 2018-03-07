@@ -1,0 +1,24 @@
+{
+  "name": "sigmural",
+  "version": "1.0.0",
+  "description": "Praq mural se tem tecnologia",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoRiether/Sigmural.git"
+  },
+  "keywords": [
+    "Sigma",
+    "Mural",
+    "Sigmural"
+  ],
+  "author": "Leonardo Riether <leonardoalves8217@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoRiether/Sigmural/issues"
+  },
+  "homepage": "https://github.com/LeoRiether/Sigmural#readme"
+}
