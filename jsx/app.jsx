@@ -16,7 +16,7 @@ function getImages() {
 }
 
 function openModal(src) {
-  document.querySelector('.modal').classList.remove('is-active');
+  document.querySelector('.modal').classList.add('is-active');
   document.querySelector('.modal-img').src = src;
 }
 
@@ -24,14 +24,14 @@ class Image extends React.Component {
   render() {
     if (this.props.label) {
       return (
-        <div class="box" onClick={openModal(this.props.src)}>
+        <div class="box" onClick={openModal.bind(this, this.props.src)}>
           <img src={this.props.src}/>
           <span className="label">{this.props.label}</span>
         </div>
       );
     } else {
       return (
-        <div class="box" onClick={openModal(this.props.src)}>
+        <div class="box" onClick={openModal.bind(this, this.props.src)}>
           <img src={this.props.src}/>
         </div>
       )

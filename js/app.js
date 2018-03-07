@@ -26,7 +26,7 @@ function getImages() {
 }
 
 function openModal(src) {
-  document.querySelector('.modal').classList.remove('is-active');
+  document.querySelector('.modal').classList.add('is-active');
   document.querySelector('.modal-img').src = src;
 }
 
@@ -45,7 +45,7 @@ var Image = function (_React$Component) {
       if (this.props.label) {
         return React.createElement(
           'div',
-          { 'class': 'box', onClick: openModal(this.props.src) },
+          { 'class': 'box', onClick: openModal.bind(this, this.props.src) },
           React.createElement('img', { src: this.props.src }),
           React.createElement(
             'span',
@@ -56,7 +56,7 @@ var Image = function (_React$Component) {
       } else {
         return React.createElement(
           'div',
-          { 'class': 'box', onClick: openModal(this.props.src) },
+          { 'class': 'box', onClick: openModal.bind(this, this.props.src) },
           React.createElement('img', { src: this.props.src })
         );
       }
