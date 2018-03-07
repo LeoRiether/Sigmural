@@ -4,7 +4,10 @@
   "description": "Praq mural se tem tecnologia",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "build:jsx:watch": "babel --presets es2015,react --watch jsx/ --out-dir js",
+    "build:jsx": "babel --presets es2015,react jsx/ --out-dir js && npm run uglify",
+    "uglify": "uglify -s app.js -o app.min.js -r js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/LeoRiether/Sigmural/issues"
   },
-  "homepage": "https://github.com/LeoRiether/Sigmural#readme"
+  "homepage": "https://github.com/LeoRiether/Sigmural#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
 }
