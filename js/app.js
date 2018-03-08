@@ -18,7 +18,7 @@ function setImages(data) {
 
 function getImages() {
   var req = new XMLHttpRequest();
-  req.open('GET', 'https://api.imgur.com/3/album/l8XCc/images');
+  req.open('GET', 'https://api.imgur.com/3/album/9GRpa/images');
   req.setRequestHeader('Authorization', 'Client-ID 3db795949e3e86c');
   req.responseType = 'json';
   req.onload = setImages.bind(this);
